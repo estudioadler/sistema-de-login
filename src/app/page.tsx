@@ -1,49 +1,17 @@
 "use client"
-import { Button } from '@/components/Button/Button'
-import { InputText } from '@/components/InputText/InputText'
-import { PageWrapper } from '@/components/PageWrapper/PageWrapper';
-import { PublicArea } from '@/components/PublicArea/PublicArea';
-import { Envelope, Eye, Lock} from '@phosphor-icons/react/dist/ssr';
-import { SetStateAction, useState } from 'react';
 
+import Link from "next/link"
 
 export default function Home() {
-  const [inputValue, setInputValue] = useState('');
-  const [password, setPassword] = useState('');
-
-  const handleInputChange = (value: any) => {
-    setInputValue(value);
-  };
-
-  const handlePasswordChange = (value: any) => {
-    setPassword(value);
-  };
   return (
-    <PageWrapper>
-      <PublicArea image="/favicon.ico" alt="Logo da Rocketseat" title="Boas vindas!" subTitle="Faça login e comece a usar!">
-        <div className='flex flex-col gap-4'>
-          <InputText
-              disabled={false}
-              fullWidth={true}
-              onChange={handleInputChange}
-              value={inputValue}
-              startIcon={<Envelope />}
-              label="Email"
-              placeholder='exemplo@seuemail.com'
-              />
-            <InputText
-              disabled={false}
-              fullWidth={true}
-              onChange={handlePasswordChange}
-              value={password}
-              label='Senha'
-              type='password'
-              startIcon={<Lock />}
-              placeholder='Sua senha'
-              />
-            <Button onClick={() => console.log(inputValue, password)} fullWidth={true}>Entrar</Button>
-        </div>
-      </PublicArea>
-    </PageWrapper>
+    <ul className="flex flex-col gap-4">
+      <li><Link href={"/loginPage"} className="bg-neutral-900 text-white py-2 px-4">Pagina de Login</Link></li>
+      <li><Link href={"/register"} className="bg-neutral-900 text-white py-2 px-4">Pagina de registro</Link></li>
+      <li><Link href={"/verifyEmail"} className="bg-neutral-900 text-white py-2 px-4">Pagina de verificar email</Link></li>
+      <li><Link href={"/confirmEmail"} className="bg-neutral-900 text-white py-2 px-4">Pagina de confirmar email</Link></li>
+      <li><Link href={"/registerConfirmed"} className="bg-neutral-900 text-white py-2 px-4">Pagina de registro confirmado</Link></li>
+      <li><Link href={"/forgotPassword"} className="bg-neutral-900 text-white py-2 px-4">Pagina de esqueceu a senha</Link></li>
+      <li><Link href={"/forgotPassword"} className="bg-neutral-900 text-white py-2 px-4">Pagina de confira seu email (link)</Link></li>
+    </ul>
   )
 }

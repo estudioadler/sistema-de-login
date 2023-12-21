@@ -21,7 +21,7 @@ export const PublicArea = ({
     <div className="flex flex-col w-full gap-4 max-w-sm">
       <div className="flex flex-col justify-center items-center gap-8 pt-11">
         <Image src={image} alt={alt} width={64} height={64} />
-        <div className="flex gap-2 flex-col items-center">
+        <div className="flex gap-2 flex-col items-center mb-4">
           <h1 className="text-2xl font-bold">{title}</h1>
           <h2 className="text-gray-500 text-xm text-center">{subTitle}</h2>
         </div>
